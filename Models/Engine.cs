@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WnGCalculator.Models
+namespace DnD4Calculator.Models
 {
     public class DnDObject
     {
@@ -15,7 +15,7 @@ namespace WnGCalculator.Models
     {
         public int id {get;}
 
-        public int ParentTag { get; set; }
+        public Tag ParentTag { get; set; }
         public string Name { get; set; }
 
         public string SysName { get; set; }

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DnD4Calculator.Models;
+using DnD4Calculator.Models.Creatures.Beasts;
+
 
 namespace DnD4Calculator.Controllers
 {
@@ -20,7 +19,25 @@ namespace DnD4Calculator.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var type = new Tag {SysName = "MONSTER", Name = "Монстр"};
+            var roles = new List<Tag>();
+
+            Tag nature = new Tag {Name = "Природный", SysName = "NATURE", ParentTag = type };
+            roles.Add(nature);
+
+            Tag humanoid = new Tag {Name = "Гуманоид", SysName = "HUMANOID", ParentTag = type };
+            roles.Add(humanoid);
+
+            Tag raider = new Tag {Name = "Налетчик", SysName = "RAIDER", ParentTag = type };
+            roles.Add(raider);
+
+            string description = "Гоблины - это злобные предатлеьские существа, которым нравятся грабежи и жестокость. Они не большие и не сильные, " +
+                "но могут представлять опасность, если навалятся всем скопом. Гоблины быстро размножаются, и могут жить в любых местах, от пещер и руин - до городской канализации. " +
+                "Они совершают набеги и ограбления, забирая у жертв все, что может пригодиться.";
+            
+            var monster = new Monster { id = 1, Level = 1, Name = "Гоблин Воин", Type = type, Roles = roles, Description = description};
+
+            return View(monster);
         }
 
         public IActionResult Privacy()

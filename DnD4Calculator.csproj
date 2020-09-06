@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Creatures\Characters\NPC\" />
+    <Folder Include="Models\Creatures\Characters\Players\" />
+    <Folder Include="Models\Creatures\Shapes\" />
+  </ItemGroup>
+
 </Project>
