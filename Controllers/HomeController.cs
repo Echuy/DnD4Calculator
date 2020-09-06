@@ -37,6 +37,8 @@ namespace DnD4Calculator.Controllers
             
             var monster = new Monster { id = 1, Level = 1, Name = "Гоблин Воин", Type = type, Roles = roles, Description = description};
 
+            monster.Exp = 100;
+
             return View(monster);
         }
 

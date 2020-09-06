@@ -12,6 +12,8 @@ namespace DnD4Calculator.Models.Creatures.Beasts
 
         public List<Tag> Roles { get; set; }
 
+        public int Exp { get; set; }
+
 
     }
 }
